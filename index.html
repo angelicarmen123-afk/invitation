@@ -1,0 +1,227 @@
+<title>Declan O’Carolan Graduation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --ground: #050d22;
+    --navy: #0a1a3a;
+    --navy-lift: #10264f;
+    --gold: #d9b46c;
+    --gold-deep: #9c7a3f;
+    --ivory: #f4efe4;
+    --muted: #aab4c8;
+    --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --font-label: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(120% 70% at 50% 0%, var(--navy-lift) 0%, transparent 60%),
+      var(--ground);
+    color: var(--ivory);
+    font-family: var(--font-display);
+    padding-block: 32px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .card {
+    position: relative;
+    max-width: 600px;
+    margin-inline: auto;
+    padding: clamp(40px, 9vw, 72px) clamp(24px, 8vw, 64px) clamp(32px, 7vw, 52px);
+    background: linear-gradient(170deg, var(--navy) 0%, #07122b 100%);
+    border: 1px solid var(--gold-deep);
+    text-align: center;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(217, 180, 108, .45);
+    pointer-events: none;
+  }
+  .corner { position: absolute; width: 14px; height: 14px; background: var(--gold); transform: rotate(45deg); }
+  .corner.tl { top: 3px; left: 3px; } .corner.tr { top: 3px; right: 3px; }
+  .corner.bl { bottom: 3px; left: 3px; } .corner.br { bottom: 3px; right: 3px; }
+  .crest { width: clamp(150px, 38vw, 200px); height: auto; color: var(--gold); margin-bottom: 28px; }
+  .eyebrow {
+    font-family: var(--font-label);
+    font-size: clamp(11px, 2.6vw, 13px);
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0;
+  }
+  .lead {
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(26px, 6.6vw, 36px);
+    color: var(--gold);
+    margin: 10px 0 6px;
+    line-height: 1.2;
+  }
+  h1 {
+    font-weight: 500;
+    font-size: clamp(54px, 15vw, 92px);
+    line-height: .98;
+    letter-spacing: -.01em;
+    margin: 0;
+    color: #fff;
+    text-wrap: balance;
+  }
+  .degree {
+    font-family: var(--font-label);
+    font-size: clamp(13px, 3.3vw, 17px);
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 22px 0 0;
+    line-height: 1.7;
+  }
+  .degree small { display: block; font-size: .85em; letter-spacing: .3em; }
+  .rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 28px auto; max-width: 220px; }
+  .rule::before, .rule::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .rule::after { transform: scaleX(-1); }
+  .rule i { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  .blurb {
+    font-size: clamp(19px, 4.6vw, 23px);
+    line-height: 1.55;
+    max-width: 30em;
+    margin: 0 auto;
+    color: var(--ivory);
+    text-wrap: balance;
+  }
+  .details { list-style: none; padding: 0; margin: 34px auto 0; max-width: 360px; display: grid; gap: 22px; text-align: left; }
+  .details li { display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: 18px; min-width: 0; }
+  .details svg { width: 36px; height: 36px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .label { display: block; font-family: var(--font-label); font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .value { display: block; font-size: clamp(21px, 5.2vw, 25px); line-height: 1.2; color: #fff; }
+  .value small { display: block; font-size: .8em; color: var(--muted); margin-top: 2px; }
+  .countdown { margin: 28px 0 0; font-style: italic; font-size: 19px; color: var(--gold); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 46px; padding: 12px 22px;
+    font-family: var(--font-label); font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    border: 1px solid var(--gold); color: var(--gold); background: transparent;
+    transition: background-color .2s, color .2s;
+  }
+  .btn:hover { background: rgba(217, 180, 108, .14); }
+  .btn.primary { background: var(--gold); color: var(--ground); font-weight: 500; }
+  .btn.primary:hover { background: #e6c581; }
+  .btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .tagline {
+    margin: 40px 0 0; padding-top: 28px; border-top: 1px solid rgba(217, 180, 108, .45);
+    font-family: var(--font-label); font-size: clamp(10px, 2.5vw, 12px); letter-spacing: .3em;
+    line-height: 2.1; text-transform: uppercase; color: var(--gold);
+  }
+  .quote { margin: 26px 0 0; font-style: italic; font-size: clamp(20px, 5vw, 24px); color: var(--gold); }
+  .share { max-width: 600px; margin: 18px auto 0; text-align: center; font-size: 16px; color: var(--muted); }
+  .share button {
+    font: inherit; color: var(--gold); background: none; border: 0; padding: 6px 4px; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 4px;
+  }
+  .share button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+</style>
+
+<main class="card">
+  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+
+  <svg class="crest" viewBox="0 0 220 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+    <!-- scales of justice -->
+    <line x1="110" y1="24" x2="110" y2="100"/>
+    <line x1="72" y1="34" x2="148" y2="34"/>
+    <circle cx="110" cy="20" r="4" fill="currentColor" stroke="none"/>
+    <path d="M72 34 L60 70 M72 34 L84 70 M148 34 L136 70 M148 34 L160 70"/>
+    <path d="M56 70 H88 Q72 86 56 70 Z M132 70 H164 Q148 86 132 70 Z"/>
+    <path d="M94 100 H126 M100 94 H120"/>
+    <!-- laurels -->
+    <g>
+      <path d="M40 104 Q14 66 38 22"/>
+      <g fill="currentColor" stroke="none">
+        <ellipse cx="28" cy="92" rx="3.6" ry="9" transform="rotate(-48 28 92)"/><ellipse cx="40" cy="90" rx="3.6" ry="9" transform="rotate(38 40 90)"/>
+        <ellipse cx="22" cy="72" rx="3.6" ry="9" transform="rotate(-52 22 72)"/><ellipse cx="34" cy="70" rx="3.6" ry="9" transform="rotate(38 34 70)"/>
+        <ellipse cx="22" cy="52" rx="3.6" ry="9" transform="rotate(-48 22 52)"/><ellipse cx="34" cy="50" rx="3.6" ry="9" transform="rotate(38 34 50)"/>
+        <ellipse cx="30" cy="32" rx="3.6" ry="9" transform="rotate(-30 30 32)"/>
+      </g>
+    </g>
+    <g transform="translate(220 0) scale(-1 1)">
+      <path d="M40 104 Q14 66 38 22"/>
+      <g fill="currentColor" stroke="none">
+        <ellipse cx="28" cy="92" rx="3.6" ry="9" transform="rotate(-48 28 92)"/><ellipse cx="40" cy="90" rx="3.6" ry="9" transform="rotate(38 40 90)"/>
+        <ellipse cx="22" cy="72" rx="3.6" ry="9" transform="rotate(-52 22 72)"/><ellipse cx="34" cy="70" rx="3.6" ry="9" transform="rotate(38 34 70)"/>
+        <ellipse cx="22" cy="52" rx="3.6" ry="9" transform="rotate(-48 22 52)"/><ellipse cx="34" cy="50" rx="3.6" ry="9" transform="rotate(38 34 50)"/>
+        <ellipse cx="30" cy="32" rx="3.6" ry="9" transform="rotate(-30 30 32)"/>
+      </g>
+    </g>
+  </svg>
+
+  <p class="eyebrow">You are cordially invited to</p>
+  <p class="lead">The Graduation Ceremony of</p>
+  <h1>Declan O’Carolan</h1>
+  <p class="degree">Bachelor of Laws (Hons)<small>(LL.B.)</small></p>
+
+  <div class="rule" aria-hidden="true"><i></i></div>
+
+  <p class="blurb">Join us in celebrating the achievement of Declan as he graduates as a Solicitor and begins the next chapter of his journey.</p>
+
+  <ul class="details">
+    <li>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7.5 14h2M11 14h2M14.5 14h2M7.5 17.5h2M11 17.5h2"/></svg>
+      <div><span class="label">Date</span><span class="value">Friday, 30 October 2026</span></div>
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+      <div><span class="label">Time</span><span class="value">15:30 hrs<small>3:30 PM</small></span></div>
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.6 7-11.5a7 7 0 10-14 0C5 14.4 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      <div><span class="label">Venue</span><span class="value">TU Dublin Campus<small>Tallaght, Dublin</small></span></div>
+    </li>
+  </ul>
+
+  <p class="countdown" id="countdown" hidden></p>
+
+  <div class="actions">
+    <a class="btn primary" target="_blank" rel="noopener"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Declan%20O%E2%80%99Carolan%27s%20Graduation%20Ceremony&amp;dates=20261030T153000/20261030T173000&amp;ctz=Europe/Dublin&amp;details=Graduation%20ceremony%20for%20Declan%20O%E2%80%99Carolan%2C%20Bachelor%20of%20Laws%20(Hons)%20(LL.B.).&amp;location=TU%20Dublin%20Campus%2C%20Tallaght%2C%20Dublin">Add to calendar</a>
+    <a class="btn" target="_blank" rel="noopener"
+       href="https://www.google.com/maps/search/?api=1&amp;query=TU+Dublin+Tallaght+Campus">Get directions</a>
+  </div>
+
+  <p class="tagline">Celebrating hard work,<br>honouring achievement,<br>welcoming new beginnings.</p>
+  <p class="quote">The future is a place you create…</p>
+</main>
+
+<p class="share"><button type="button" id="copy">Copy invitation link</button> <span id="copied" role="status" aria-live="polite"></span></p>
+
+<script>
+  // Days-to-go line, shown only while the date is still ahead.
+  (function () {
+    var el = document.getElementById("countdown");
+    var event = new Date(2026, 9, 30);
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var days = Math.round((event - today) / 86400000);
+    if (days > 1) { el.textContent = days + " days to go"; el.hidden = false; }
+    else if (days === 1) { el.textContent = "Tomorrow"; el.hidden = false; }
+    else if (days === 0) { el.textContent = "Today"; el.hidden = false; }
+  })();
+
+  // Copy this page's link so it can be pasted into WhatsApp, text or email.
+  document.getElementById("copy").addEventListener("click", function () {
+    var msg = document.getElementById("copied");
+    var url = window.location.href;
+    var done = function (ok) {
+      msg.textContent = ok ? "Link copied." : "Copy the address from your browser's address bar.";
+      setTimeout(function () { msg.textContent = ""; }, 3500);
+    };
+    try {
+      navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(false); });
+    } catch (e) { done(false); }
+  });
+</script>
